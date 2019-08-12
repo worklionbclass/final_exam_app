@@ -2,4 +2,23 @@
 제목 : <%= @board.title %> <br>
 내용 : <%= @board.content %> <br>
 
+<hr>
+
+<form action="/boards/<%= @board.id %>/comments" method="POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    댓글 작성 : <input type="text" name="body" />
+    <button type="submit">제출</button>
+</form>
+
+<hr>
+<h3>댓글 리스트</h3>
+<% @board.comments.each do |comment| %>
+    작성자 : <%= comment.user.name %>
+    댓글 내용 : <%= comment.body %> 
+    <% if current_user == comment.user %>
+        <a href="/comments/destroy/<%= comment.id %>">삭제</a>
+    <% end %>
+    <hr>
+<% end %>
+
 <a href="/boards/index">목록으로 가기</a>

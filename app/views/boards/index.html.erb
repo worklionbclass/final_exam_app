@@ -19,8 +19,10 @@
             <td><%= board.content %></td>
             <td>
                 <a href="/boards/show/<%= board.id %>">보기</a>
-                <a href="/boards/edit/<%= board.id %>">수정</a>
-                <a href="/boards/destroy/<%= board.id %>">삭제</a>
+                <% if current_user == board.user %>
+                    <a href="/boards/edit/<%= board.id %>">수정</a>
+                    <a href="/boards/destroy/<%= board.id %>">삭제</a>
+                <% end %>
             </td>
         </tr>
     <% end %>

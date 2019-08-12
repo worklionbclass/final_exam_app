@@ -9,12 +9,14 @@
     <tr>
         <th>작성자</th>
         <th>제목</th>
+        <th>내용</th>
         <th>버튼</th>
     </tr>
     <% @boards.each do |board| %>
         <tr>
             <td><%= board.user.name %></td>
             <td><%= board.title %></td>
+            <td><%= board.content %></td>
             <td>
                 <a href="/boards/show/<%= board.id %>">보기</a>
                 <% if current_user == board.user %>

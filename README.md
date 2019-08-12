@@ -1,24 +1,14 @@
-# README
+## 초기 작업
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+  git clone https://github.com/worklionbclass/final_exam_app
+  cd final_exam_app
+  bundle install
+  rake db:migrate
+  rake db:seed
+  rails s
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 기능 정리
+1. Board 모델 CRUD
+2. 사용자 인증 기능 & (name 필드 추가)

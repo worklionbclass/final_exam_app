@@ -14,3 +14,4 @@ Board.all.each do |board|
         board.comments.create(body: Faker::Kpop.iii_groups, user: User.first)
     end
 end
+
